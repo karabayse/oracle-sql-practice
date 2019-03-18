@@ -1,3 +1,7 @@
 ## Oracle SQL Practice
 
-* Oracle SQL practice including SELECT and INSERT using dummy data
+Oracle SQL practice with dummy data using:
+* CREATE TABLE
+* ALTER TABLE
+* SELECT
+* INSERT
