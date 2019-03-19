@@ -30,3 +30,18 @@ ALTER TABLE dummy_table
     minextents  1
     maxextents  unlimited
   );
+
+
+  INSERT /*+append*/ INTO dummy_table_2 (
+    xx_yy
+    yy_zz
+  )
+  SELECT
+    xr_xr
+    dummy_database.record_key.nextval
+    NULL
+    CASE
+      WHEN DENSE_RANK()OVER(PARTITION BY xr_xr, ORDER BY xr_xy) - 1 THEN 1
+      ELSE 0
+    END as CURRENT_FLAG
+  from dummy_table
