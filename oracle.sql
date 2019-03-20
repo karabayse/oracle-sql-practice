@@ -50,3 +50,7 @@ ALTER TABLE dummy_table
   SELECT first_name, last_name, primary_address
   FROM dummy_table_2
   WHERE first_name LIKE 'K%';
+
+  SELECT first_name, last_name, primary_address
+  FROM dummy_table_2
+  WHERE salary BETWEEN 50000 AND 100000;
