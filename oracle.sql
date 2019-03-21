@@ -58,3 +58,29 @@ ALTER TABLE dummy_table
   SELECT first_name, last_name, salary, department_id
   FROM dummy_table_2
   WHERE (salary BETWEEN 50000 AND 100000) AND department_id BETWEEN 1 AND 50;
+
+
+  -- Verification Script
+  SELECT 'new_table' new_table, old_count, new_count, match_count
+    ,CASE
+      WHEN old_count = new_count
+      AND new_count = match_count
+      THEN 'OK'
+      ELSE 'FAIL'
+    end PassFail
+  FROM
+  (
+    SELECT
+    (SELECT COUNT(*) FROM old_table) old_count
+    ,(SELECT COUNT(*) FROM new_table) new_count
+    ,(SELECT COUNT(*) FROM
+        (SELECT
+          p.xr_xr
+        FROM old_table p
+        INTERSECT
+        SELECT
+          c.xr_xr
+        FROM new_table c)
+      ), match_count
+      FROM dual
+  );
