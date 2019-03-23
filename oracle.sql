@@ -32,7 +32,7 @@ ALTER TABLE dummy_table
   );
 
 
-  INSERT /*+append*/ INTO dummy_table_2 (
+  INSERT /*+APPEND*/ INTO dummy_table_2 (
     xx_yy
     yy_zz
   )

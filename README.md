@@ -5,6 +5,7 @@ Oracle SQL practice with dummy data using DDL and DML including:
 * ALTER TABLE
 * SELECT
 * INSERT
+* /*+APPEND*/
 * CASE
 * COUNT
 * INTERSECT
